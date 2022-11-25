@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/mainstyle.css" />
+    <title>OTT Planet main</title>
+  </head>
+
+  <body style="height: auto">
+    <div class="main-wrap">
+      <div class="top-content">
+        <div class="mytitle">
+          <header>
+            <h1 class="Logo"><img src="../static/img/logo.png" /></h1>
+            <button class="mainLoginBtn">Login</button>
+          </header>
+          <h3 class="tit">
+            Chose Your <br />
+            OTT Contents!
+          </h3>
+          <div class="box-cont">
+            <button class="OTTTapBtn" onclick="open_box1()">NETFLIX</button>
+            <button class="OTTTapBtn" onclick="open_box2()">WAVVE</button>
+            <button class="OTTTapBtn" onclick="open_box3()">Watcha</button>
+          </div>
+        </div>
+
+        <div class="slide-container">
+          <div class="swiper slide1">
+            <div class="swiper-wrapper" id="Netflix"></div>
+            <div class="next-prev-btn-cont">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="swiper slide2">
+            <div class="swiper-wrapper" id="Wavve"></div>
+            <div class="next-prev-btn-cont">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+
+          <div class="swiper slide3">
+            <div class="swiper-wrapper" id="Watcha"></div>
+            <div class="next-prev-btn-cont">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table">
+        <div class="tcontent">
+          <div class="tWrap">
+            <p class="tTit">Comment 작성</p>
+            <thead>
+              <div class="comment-input-wrap">
+                <div class="inputBox">
+                  <select id="ott" class="ottSelect">
+                    <option selected>-- OTT --</option>
+                    <option value="Netflix">Netflix</option>
+                    <option value="Wavve">Wavve</option>
+                    <option value="Watcha">Watcha</option>
+                  </select>
+                  <div class="tInput1">
+                    <input id="contents" type="text" placeholder="Contents" />
+                  </div>
+
+                  <div class="tInput2">
+                    <input id="comment" type="text" placeholder="Comment" />
+                  </div>
+                </div>
+                <button onclick="save_comment()" class="tBtn">글쓰기</button>
+              </div>
+            </thead>
+            <div class="tCon">
+              <button onclick="ottSortHandler('showAll')">Show All</button>
+              <button onclick="ottSortHandler('Netflix')">Netflix</button>
+              <button onclick="ottSortHandler('Wavve')">Wavve</button>
+              <button onclick="ottSortHandler('Watcha')">Watcha</button>
+            </div>
+            <div class="tlist tableTit">
+              <ul>
+                <li class="liNick">닉네임</li>
+                <li class="liOtt">OTT명</li>
+                <li class="liContents">컨텐츠 이름</li>
+                <li class="liComment">리뷰</li>
+              </ul>
+            </div>
+            <div id="tBox" class="tlist"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../static/js/mainPage.js"></script>
+  </body>
+</html>
